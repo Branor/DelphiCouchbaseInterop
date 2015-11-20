@@ -1,0 +1,13 @@
+bin
+obj
+Debug
+Release
+packages
+__history
+__recovery
+Win32
+*.suo
+*.local
+*.identcache
+.vs
+*.stat
