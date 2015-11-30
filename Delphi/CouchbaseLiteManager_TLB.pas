@@ -1,4 +1,4 @@
-unit DelphiCouchbaseInterop_TLB;
+unit CouchbaseLiteManager_TLB;
 
 // ************************************************************************ //
 // WARNING                                                                    
@@ -12,11 +12,11 @@ unit DelphiCouchbaseInterop_TLB;
 // ************************************************************************ //
 
 // $Rev: 52393 $
-// File generated on 11/30/2015 1:20:49 PM from Type Library described below.
+// File generated on 11/30/2015 1:14:58 PM from Type Library described below.
 
 // ************************************************************************  //
-// Type Lib: c:\Work\Couchbase\DotNet\DelphiCouchbaseInterop\DelphiCouchbaseInterop\bin\Debug\DelphiCouchbaseInterop.tlb (1)
-// LIBID: {7F0B0160-E22B-4F35-A07A-193A134DAC7C}
+// Type Lib: C:\Work\Couchbase\CouchbaseLite-Delphi-ComInterop\CouchbaseLiteManager\bin\Debug\CouchbaseLiteManager.tlb (1)
+// LIBID: {A3CE478A-9C98-4E41-9697-E9F1D84F8932}
 // LCID: 0
 // Helpfile: 
 // HelpString: 
@@ -46,74 +46,82 @@ uses Winapi.Windows, mscorlib_TLB, System.Classes, System.Variants, System.Win.S
 // *********************************************************************//
 const
   // TypeLibrary Major and minor versions
-  DelphiCouchbaseInteropMajorVersion = 1;
-  DelphiCouchbaseInteropMinorVersion = 0;
+  CouchbaseLiteManagerMajorVersion = 1;
+  CouchbaseLiteManagerMinorVersion = 0;
 
-  LIBID_DelphiCouchbaseInterop: TGUID = '{7F0B0160-E22B-4F35-A07A-193A134DAC7C}';
+  LIBID_CouchbaseLiteManager: TGUID = '{A3CE478A-9C98-4E41-9697-E9F1D84F8932}';
 
-  IID_ICouchbaseFacade: TGUID = '{CC843972-BF02-4453-9C39-6B36E2E1CDFA}';
-  CLASS_CouchbaseFacade: TGUID = '{961E66E7-8DF5-4366-AAF6-F84037D26B05}';
+  IID_ICouchbaseLiteFacade: TGUID = '{02113B7A-4864-4520-94CD-1542A2B0FF05}';
+  CLASS_CouchbaseLiteFacade: TGUID = '{6DF7E4DA-7A81-457A-B0AF-7B80D7F10694}';
 type
 
 // *********************************************************************//
 // Forward declaration of types defined in TypeLibrary                    
 // *********************************************************************//
-  ICouchbaseFacade = interface;
-  ICouchbaseFacadeDisp = dispinterface;
+  ICouchbaseLiteFacade = interface;
+  ICouchbaseLiteFacadeDisp = dispinterface;
 
 // *********************************************************************//
 // Declaration of CoClasses defined in Type Library                       
 // (NOTE: Here we map each CoClass to its Default Interface)              
 // *********************************************************************//
-  CouchbaseFacade = ICouchbaseFacade;
+  CouchbaseLiteFacade = ICouchbaseLiteFacade;
 
 
 // *********************************************************************//
-// Interface: ICouchbaseFacade
+// Interface: ICouchbaseLiteFacade
 // Flags:     (4416) Dual OleAutomation Dispatchable
-// GUID:      {CC843972-BF02-4453-9C39-6B36E2E1CDFA}
+// GUID:      {02113B7A-4864-4520-94CD-1542A2B0FF05}
 // *********************************************************************//
-  ICouchbaseFacade = interface(IDispatch)
-    ['{CC843972-BF02-4453-9C39-6B36E2E1CDFA}']
-    function Get(const key: WideString): OleVariant; safecall;
-    procedure Upsert(const key: WideString; value: OleVariant); safecall;
+  ICouchbaseLiteFacade = interface(IDispatch)
+    ['{02113B7A-4864-4520-94CD-1542A2B0FF05}']
+    procedure StartSyncGateway(const url: WideString); safecall;
+    procedure StopSyncGateway; safecall;
+    function Insert(const docId: WideString; const propertiesJson: WideString): WideString; safecall;
+    function Get(const docId: WideString): WideString; safecall;
+    function Update(const documentJson: WideString; const updatedPropertiesJsons: WideString): WideString; safecall;
+    function Delete(const documentId: WideString): WordBool; safecall;
   end;
 
 // *********************************************************************//
-// DispIntf:  ICouchbaseFacadeDisp
+// DispIntf:  ICouchbaseLiteFacadeDisp
 // Flags:     (4416) Dual OleAutomation Dispatchable
-// GUID:      {CC843972-BF02-4453-9C39-6B36E2E1CDFA}
+// GUID:      {02113B7A-4864-4520-94CD-1542A2B0FF05}
 // *********************************************************************//
-  ICouchbaseFacadeDisp = dispinterface
-    ['{CC843972-BF02-4453-9C39-6B36E2E1CDFA}']
-    function Get(const key: WideString): OleVariant; dispid 1610743808;
-    procedure Upsert(const key: WideString; value: OleVariant); dispid 1610743809;
+  ICouchbaseLiteFacadeDisp = dispinterface
+    ['{02113B7A-4864-4520-94CD-1542A2B0FF05}']
+    procedure StartSyncGateway(const url: WideString); dispid 1610743808;
+    procedure StopSyncGateway; dispid 1610743809;
+    function Insert(const docId: WideString; const propertiesJson: WideString): WideString; dispid 1610743810;
+    function Get(const docId: WideString): WideString; dispid 1610743811;
+    function Update(const documentJson: WideString; const updatedPropertiesJsons: WideString): WideString; dispid 1610743812;
+    function Delete(const documentId: WideString): WordBool; dispid 1610743813;
   end;
 
 // *********************************************************************//
-// The Class CoCouchbaseFacade provides a Create and CreateRemote method to          
-// create instances of the default interface ICouchbaseFacade exposed by              
-// the CoClass CouchbaseFacade. The functions are intended to be used by             
+// The Class CoCouchbaseLiteFacade provides a Create and CreateRemote method to          
+// create instances of the default interface ICouchbaseLiteFacade exposed by              
+// the CoClass CouchbaseLiteFacade. The functions are intended to be used by             
 // clients wishing to automate the CoClass objects exposed by the         
 // server of this typelibrary.                                            
 // *********************************************************************//
-  CoCouchbaseFacade = class
-    class function Create: ICouchbaseFacade;
-    class function CreateRemote(const MachineName: string): ICouchbaseFacade;
+  CoCouchbaseLiteFacade = class
+    class function Create: ICouchbaseLiteFacade;
+    class function CreateRemote(const MachineName: string): ICouchbaseLiteFacade;
   end;
 
 implementation
 
 uses System.Win.ComObj;
 
-class function CoCouchbaseFacade.Create: ICouchbaseFacade;
+class function CoCouchbaseLiteFacade.Create: ICouchbaseLiteFacade;
 begin
-  Result := CreateComObject(CLASS_CouchbaseFacade) as ICouchbaseFacade;
+  Result := CreateComObject(CLASS_CouchbaseLiteFacade) as ICouchbaseLiteFacade;
 end;
 
-class function CoCouchbaseFacade.CreateRemote(const MachineName: string): ICouchbaseFacade;
+class function CoCouchbaseLiteFacade.CreateRemote(const MachineName: string): ICouchbaseLiteFacade;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_CouchbaseFacade) as ICouchbaseFacade;
+  Result := CreateRemoteComObject(MachineName, CLASS_CouchbaseLiteFacade) as ICouchbaseLiteFacade;
 end;
 
 end.
