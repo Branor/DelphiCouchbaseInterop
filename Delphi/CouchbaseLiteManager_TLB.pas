@@ -12,7 +12,7 @@ unit CouchbaseLiteManager_TLB;
 // ************************************************************************ //
 
 // $Rev: 52393 $
-// File generated on 11/30/2015 1:14:58 PM from Type Library described below.
+// File generated on 12/3/2015 12:53:20 PM from Type Library described below.
 
 // ************************************************************************  //
 // Type Lib: C:\Work\Couchbase\CouchbaseLite-Delphi-ComInterop\CouchbaseLiteManager\bin\Debug\CouchbaseLiteManager.tlb (1)

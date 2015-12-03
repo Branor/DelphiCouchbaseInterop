@@ -12,7 +12,7 @@ unit DelphiCouchbaseInterop_TLB;
 // ************************************************************************ //
 
 // $Rev: 52393 $
-// File generated on 11/30/2015 1:20:49 PM from Type Library described below.
+// File generated on 12/3/2015 12:58:56 PM from Type Library described below.
 
 // ************************************************************************  //
 // Type Lib: c:\Work\Couchbase\DotNet\DelphiCouchbaseInterop\DelphiCouchbaseInterop\bin\Debug\DelphiCouchbaseInterop.tlb (1)
